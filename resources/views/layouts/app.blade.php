@@ -27,16 +27,18 @@
         <flux:brand class="max-lg:hidden! hidden dark:flex" name="karlm." href="/" />
 
         <flux:navbar class="-mb-px max-lg:hidden">
-            {{-- <flux:navbar.item href="{{ $url }}" icon="{{ $icon }}">
-                {{ $title }}
-            </flux:navbar.item> --}}
+            @foreach ($navItems as $item)
+                <flux:navbar.item href="{{ $item['url'] }}" icon="{{ $item['icon'] }}">
+                    {{ $item['title'] }}
+                </flux:navbar.item>
+            @endforeach
         </flux:navbar>
 
         <flux:spacer />
 
-        {{-- <flux:navbar>
-            <livewire:partials.command />
-        </flux:navbar> --}}
+        <flux:navbar>
+            <livewire:components.command />
+        </flux:navbar>
     </flux:header>
 
     <flux:sidebar class="border-r lg:hidden bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700" stashable
