@@ -49,9 +49,11 @@
         <flux:brand class="hidden px-2 dark:flex" name="karlm." href="/" />
 
         <flux:navlist variant="outline">
-            {{-- <flux:navlist.item href="{{ $url }}" icon="{{ $icon }}">
-                {{ $title }}
-            </flux:navlist.item> --}}
+            @foreach($navItems as $item)
+                <flux:navlist.item href="{{ $item['url'] }}" icon="{{ $item['icon'] }}">
+                    {{ $item['title'] }}
+                </flux:navlist.item>
+            @endforeach
         </flux:navlist>
     </flux:sidebar>
 

@@ -14,7 +14,7 @@ new class extends Component {
         <flux:input as="button" placeholder="Search..." icon="magnifying-glass" kbd="/" />
     </flux:modal.trigger>
 
-    <flux:modal class="min-h-[30rem] w-full max-w-[30rem] px-6" name="search" variant="bare"
+    <flux:modal class="min-h-120 w-full max-w-120 px-6" name="search" variant="bare"
         x-on:keydown.cmd.k.document="$el.showModal()">
         <flux:command class="border-none shadow-lg">
             <flux:command.input placeholder="Search..." closable />
