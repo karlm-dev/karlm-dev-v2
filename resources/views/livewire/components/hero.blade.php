@@ -1,5 +1,5 @@
 <div class="py-8 mx-auto text-center">
-    <img class="mx-auto mb-8 bg-center rounded-full size-40" src="{{ asset('assets/profile.jpg') }}"
+    <img class="mx-auto mb-8 bg-center rounded-full size-52" src="{{ asset('assets/profile.jpg') }}"
         alt="My Profile Picture">
 
     <h1
