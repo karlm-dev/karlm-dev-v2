@@ -14,11 +14,11 @@ class ResponsibilitiesTable
     {
         return $table
             ->columns([
+                TextColumn::make('description')
+                    ->searchable(),
                 TextColumn::make('company.name')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('description')
-                    ->searchable(),
                 TextColumn::make('sort_order')
                     ->numeric()
                     ->sortable(),

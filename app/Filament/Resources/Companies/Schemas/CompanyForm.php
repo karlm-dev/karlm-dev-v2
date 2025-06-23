@@ -23,10 +23,10 @@ class CompanyForm
                 ->maxLength(255),
 
             DatePicker::make('start_date')
-                ->format('d/m/Y'),
+                ->displayFormat('d/m/Y'),
 
             DatePicker::make('end_date')
-                ->format('d/m/Y')
+                ->displayFormat('d/m/Y')
                 ->nullable()
                 ->label('End Date (if applicable)')
                 ->helperText('Leave empty if currently employed'),
