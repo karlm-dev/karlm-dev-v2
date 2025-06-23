@@ -8,7 +8,8 @@
     </h1>
 
     <div class="mx-auto mt-5">
-        Software Engineer <br class="md:hidden"> @ <flux:link href="https://canyongbs.com" target="_blank">
+        Software Engineer <br class="md:hidden"> @
+        <flux:link href="https://canyongbs.com" target="_blank">
             Canyon GBS
         </flux:link>
     </div>
