@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Responsibilities\Schemas;
 
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextArea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -14,12 +15,21 @@ class ResponsibilityForm
             ->components([
                 Select::make('company_id')
                     ->relationship('company', 'name')
-                    ->required(),
-                TextInput::make('description')
+                    ->required()
+                    ->searchable()
+                    ->columnSpanFull()
+                    ->preload()
+                    ->createOptionForm([
+                        TextInput::make('name')->required(),
+                        TextInput::make('title')->required(),
+                    ]),
+                TextArea::make('description')
+                    ->columnSpanFull()
                     ->required(),
                 TextInput::make('sort_order')
                     ->required()
                     ->numeric()
+                    ->columnSpanFull()
                     ->default(0),
             ]);
     }
