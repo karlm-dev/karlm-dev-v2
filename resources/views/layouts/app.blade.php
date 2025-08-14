@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Karl M. | Developer</title>
+    <title>{{ app(\App\Settings\SiteSettings::class)->site_name }}</title>
+    <meta name="description" content="{{ app(\App\Settings\SiteSettings::class)->site_description }}">
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -61,7 +62,7 @@
         {{ $slot }}
 
         <footer class="flex flex-wrap items-center justify-center mt-16">
-            <p>Made with ❤️ using Laravel & Livewire.</p>
+            <p>{{ app(\App\Settings\SiteSettings::class)->footer_text }}</p>
         </footer>
     </flux:main>
 

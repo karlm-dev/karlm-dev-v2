@@ -20,12 +20,15 @@ class ResponsibilitiesRelationManager extends RelationManager
 
     public function table(Table $table): Table
     {
-        return ResponsibilitiesTable::configure($table)
-            ->headerActions([
-                CreateAction::make('create')
-                    ->label('Add Responsibility')
-                    ->icon('heroicon-o-plus')
-                    ->modalWidth('lg'),
-            ]);
+        return ResponsibilitiesTable::configure($table)->headerActions([
+            CreateAction::make('create')
+                ->mutateDataUsing(function (array $data): array {
+                    $data['company_id'] = $this->ownerRecord->id;
+                    return $data;
+                })
+                ->label('Add Responsibility')
+                ->icon('heroicon-o-plus')
+                ->modalWidth('lg'),
+        ]);
     }
 }

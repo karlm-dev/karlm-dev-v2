@@ -1,3 +1,6 @@
+@php
+    use App\Settings\SiteSettings;
+@endphp
 <div class="py-8 mx-auto text-center">
     <img class="mx-auto mb-8 bg-center rounded-full size-52" src="{{ asset('assets/profile.jpg') }}"
         alt="My Profile Picture">
@@ -8,13 +11,13 @@
     </h1>
 
     <div class="mx-auto mt-5">
-        Software Engineer <br class="md:hidden"> @
-        <flux:link href="https://canyongbs.com" target="_blank">
-            Canyon GBS
+        {{ app(SiteSettings::class)->title }} <br class="md:hidden"> @
+        <flux:link href="{{ app(SiteSettings::class)->current_company_url }}" target="_blank">
+            {{ app(SiteSettings::class)->current_company_name }}
         </flux:link>
     </div>
 
-    <flux:button class="my-8" href="mailto:karl@karlm.dev" variant="primary">
+    <flux:button class="my-8" href="mailto:{{ app(SiteSettings::class)->email }}" variant="primary">
         Contact Me
     </flux:button>
 </div>
