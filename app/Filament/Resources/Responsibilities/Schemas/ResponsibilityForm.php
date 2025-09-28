@@ -19,8 +19,10 @@ class ResponsibilityForm
                 ->columnSpanFull()
                 ->preload()
                 ->createOptionForm([
-                    TextInput::make('name')->required(),
-                    TextInput::make('title')->required(),
+                    TextInput::make('name')
+                        ->required(),
+                    TextInput::make('title')
+                        ->required(),
                 ]),
             TextArea::make('description')
                 ->columnSpanFull()

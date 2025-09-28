@@ -22,7 +22,7 @@ class ManageSiteSettings extends SettingsPage
 
     protected static string|null|UnitEnum $navigationGroup = 'Settings';
 
-    protected static ?int $navigationSort = 40;
+    protected static ?int $navigationSort = 100;
 
     protected static string $settings = SiteSettings::class;
 
