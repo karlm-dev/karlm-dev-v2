@@ -1,11 +1,8 @@
 <?php
 
-use Livewire\Volt\Component;
 use App\Settings\SiteSettings;
 
-new class extends Component {
-    //
-}; ?>
+?>
 
 <div class="px-2">
     <div class="flex flex-wrap gap-14">
