@@ -19,6 +19,36 @@ class AppServiceProvider extends ServiceProvider
                 'icon' => 'home',
                 'title' => 'Home',
             ],
+            [
+                'url' => '/resume',
+                'icon' => 'book-open',
+                'title' => 'Resume',
+            ],
+            // [
+            //     'url' => '/podcast',
+            //     'icon' => 'microphone',
+            //     'title' => 'Podcast',
+            // ],
+            [
+                'url' => '/uses',
+                'icon' => 'computer-desktop',
+                'title' => 'Uses',
+            ],
+            // [
+            //     'url' => '/projects',
+            //     'icon' => 'folder',
+            //     'title' => 'Projects',
+            // ],
+            // [
+            //     'url' => '/timeline',
+            //     'icon' => 'calendar-days',
+            //     'title' => 'Timeline',
+            // ],
+            // [
+            //     'url' => '/blog',
+            //     'icon' => 'newspaper',
+            //     'title' => 'Blog',
+            // ],
         ]);
     }
 }

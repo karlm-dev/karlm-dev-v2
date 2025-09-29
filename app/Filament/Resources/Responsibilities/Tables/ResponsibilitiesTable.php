@@ -15,7 +15,8 @@ class ResponsibilitiesTable
         return $table
             ->columns([
                 TextColumn::make('description')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(50),
                 TextColumn::make('company.name')
                     ->numeric()
                     ->sortable(),
@@ -30,9 +31,6 @@ class ResponsibilitiesTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
             ])
             ->recordActions([
                 EditAction::make(),

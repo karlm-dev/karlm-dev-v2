@@ -1,3 +1,7 @@
+@php
+    use App\Settings\SiteSettings;
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -5,8 +9,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ app(\App\Settings\SiteSettings::class)->site_name }}</title>
-    <meta name="description" content="{{ app(\App\Settings\SiteSettings::class)->site_description }}">
+    <title>{{ app(SiteSettings::class)->site_name }}</title>
+    <meta name="description" content="{{ app(SiteSettings::class)->site_description }}">
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -24,8 +28,8 @@
     <flux:header class="border-b bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800" container sticky>
         <flux:sidebar.toggle class="lg:hidden" icon="bars-3" inset="left" />
 
-        <flux:brand class="max-lg:hidden dark:hidden" name="karlm" href="/" />
-        <flux:brand class="max-lg:hidden! hidden dark:flex" name="karlm." href="/" />
+        <flux:brand class="max-lg:hidden dark:hidden" name="{{ app(SiteSettings::class)->site_name }}" href="/" />
+        <flux:brand class="max-lg:hidden! hidden dark:flex" name="{{ app(SiteSettings::class)->site_name }}" href="/" />
 
         <flux:navbar class="-mb-px max-lg:hidden">
             @foreach ($navItems as $item)
@@ -58,11 +62,11 @@
         </flux:navlist>
     </flux:sidebar>
 
-    <flux:main class="flex flex-col justify-between" container>
+    <flux:main class="flex flex-col justify-between lg:w-7xl mx-auto">
         {{ $slot }}
 
         <footer class="flex flex-wrap items-center justify-center mt-16">
-            <p>{{ app(\App\Settings\SiteSettings::class)->footer_text }}</p>
+            <p>{{ app(SiteSettings::class)->footer_text }}</p>
         </footer>
     </flux:main>
 

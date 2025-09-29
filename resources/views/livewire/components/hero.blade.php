@@ -7,7 +7,7 @@
 
     <h1
         class="text-3xl font-bold tracking-tight text-center text-zinc-900 sm:text-4xl md:text-7xl lg:text-8xl dark:text-white">
-        Hello, <br class="hidden sm:block">I'm Karl!
+        Hello, <br class="hidden sm:block">I'm {{ app(SiteSettings::class)->first_name }}!
     </h1>
 
     <div class="mx-auto mt-5">

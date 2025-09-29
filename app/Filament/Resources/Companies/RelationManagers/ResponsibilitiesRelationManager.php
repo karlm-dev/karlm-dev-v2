@@ -2,11 +2,15 @@
 
 namespace App\Filament\Resources\Companies\RelationManagers;
 
-use App\Filament\Resources\Responsibilities\Schemas\ResponsibilityForm;
-use App\Filament\Resources\Responsibilities\Tables\ResponsibilitiesTable;
+use Filament\Actions\BulkActionGroup;
 use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Forms\Components\TextArea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class ResponsibilitiesRelationManager extends RelationManager
@@ -15,20 +19,47 @@ class ResponsibilitiesRelationManager extends RelationManager
 
     public function form(Schema $schema): Schema
     {
-        return ResponsibilityForm::configure($schema);
+        return $schema->components([
+            TextArea::make('description')
+                ->columnSpanFull()
+                ->required(),
+            TextInput::make('sort_order')
+                ->required()
+                ->numeric()
+                ->columnSpanFull()
+                ->default(0),
+        ]);
     }
 
     public function table(Table $table): Table
     {
-        return ResponsibilitiesTable::configure($table)->headerActions([
-            CreateAction::make('create')
-                ->mutateDataUsing(function (array $data): array {
-                    $data['company_id'] = $this->ownerRecord->id;
-                    return $data;
-                })
-                ->label('Add Responsibility')
-                ->icon('heroicon-o-plus')
-                ->modalWidth('lg'),
-        ]);
+        return $table
+            ->columns([
+                TextColumn::make('description')
+                    ->searchable()
+                    ->limit(50),
+                TextColumn::make('sort_order')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+            ])
+            ->recordActions([
+                EditAction::make(),
+            ])
+            ->headerActions([
+                CreateAction::make(),
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 }

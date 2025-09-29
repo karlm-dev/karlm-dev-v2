@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('responsibilities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete();
-            $table->string('description');
+            $table->longText('description');
             $table->integer('sort_order')->default(0);
             $table->timestamps();
         });

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Responsibility extends Model
 {
+    /** @var list<string> */
     protected $guarded = [
         'id',
         'created_at',

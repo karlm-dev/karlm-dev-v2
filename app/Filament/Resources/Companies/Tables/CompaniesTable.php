@@ -13,6 +13,7 @@ class CompaniesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('start_date', 'desc')
             ->columns([
                 TextColumn::make('name')
                     ->searchable()
@@ -20,15 +21,18 @@ class CompaniesTable
                 TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
+                TextColumn::make('start_date')
+                    ->date('M Y')
+                    ->sortable(),
+                TextColumn::make('end_date')
+                    ->date('M Y')
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->dateTime(),
-            ])
-            ->filters([
-                //
             ])
             ->recordActions([
                 EditAction::make(),

@@ -6,7 +6,7 @@
     <p class="text-lg leading-8">
         🚀 Laravel developer by day, custom keyboard enthusiast by night! <br> When I’m not coding
         clean, elegant solutions, you’ll find me jamming on my guitar, blasting tunes that fuel my creativity.
-        A dedicated McLaren F1 fan, I’m always revved up for the next race — just like my passion for tinkering with
+        A dedicated McLaren F1 fan, I’m always revved up for the next race, just like my passion for tinkering with
         tech! If you need someone to build a slick app or discuss the latest lap times, I’m your go-to.
     </p>
 

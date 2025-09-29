@@ -8,6 +8,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -39,7 +40,10 @@ class ManageSiteSettings extends SettingsPage
                         ->required(),
                     Textarea::make('copyright_notice'),
                     Textarea::make('footer_text'),
-            ]),
+                    Toggle::make('allow_resume_download')
+                        ->label('Allow Resume Download')
+                        ->helperText('Enable this option to allow visitors to download your resume from the site.'),
+                ]),
             Section::make('Current Work Details')
                 ->description('Provide contact details for your site.')
                 ->columnSpanFull()
@@ -54,17 +58,23 @@ class ManageSiteSettings extends SettingsPage
                     TextInput::make('title')
                         ->label('Current Job Title')
                         ->required(),
-            ]),
+                ]),
             Section::make('Contact Information')
                 ->description('Provide contact details for your site.')
                 ->columnSpanFull()
                 ->schema([
+                    TextInput::make('first_name')
+                        ->required(),
+                    TextInput::make('last_name')
+                        ->required(),
                     TextInput::make('email')
                         ->email(),
+                    TextInput::make('website')
+                        ->url(),
                     TextInput::make('phone')
                         ->tel(),
                     TextInput::make('address'),
-            ]),
+                ]),
             Section::make('Social Links')
                 ->description('Provide links to your social media profiles.')
                 ->columnSpanFull()
@@ -82,6 +92,8 @@ class ManageSiteSettings extends SettingsPage
                         TextInput::make('url')
                             ->url()
                             ->required(),
+                        Toggle::make('show_on_resume')
+                            ->label('Show on Resume'),
                     ]),
                 ]),
         ]);

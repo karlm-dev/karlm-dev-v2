@@ -22,6 +22,8 @@ class CompanyResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = 'Resume';
 
+    protected static ?int $navigationSort = 20;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema

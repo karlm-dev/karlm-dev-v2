@@ -10,7 +10,12 @@ return new class extends SettingsMigration
         $this->migrator->add('general.site_description', 'My Site Description');
         $this->migrator->add('general.copyright_notice', '© 2025 My Site All Rights Reserved');
         $this->migrator->add('general.footer_text', 'Made with ❤️ using Laravel & Livewire.');
+        $this->migrator->add('general.allow_resume_download', false);
 
+        $this->migrator->add('general.first_name', 'John');
+        $this->migrator->add('general.last_name', 'Doe');
+
+        $this->migrator->add('general.website', 'https://example.com');
         $this->migrator->add('general.email', 'test@example.com');
         $this->migrator->add('general.phone', null);
         $this->migrator->add('general.address', null);

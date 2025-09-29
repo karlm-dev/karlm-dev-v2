@@ -21,6 +21,8 @@ class ResponsibilityResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = 'Resume';
 
+    protected static ?int $navigationSort = 30;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema
@@ -31,13 +33,6 @@ class ResponsibilityResource extends Resource
     public static function table(Table $table): Table
     {
         return ResponsibilitiesTable::configure($table);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array
