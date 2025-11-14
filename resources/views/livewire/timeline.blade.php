@@ -145,12 +145,12 @@ state([
 ]);
 ?>
 
-<div class="flex flex-col gap-6 px-8">
+<div class="flex flex-col gap-6 px-2">
     <flux:heading class="" size="xl">
         Timeline
     </flux:heading>
 
-    <ul class="px-4 space-y-2 list-disc list-inside">
+    <ul class="px-4 space-y-2 list-disc list-inside py-2">
         @foreach ($events as $event)
             <li>
                 {{ $event['date'] }} - {{ $event['title'] }}
