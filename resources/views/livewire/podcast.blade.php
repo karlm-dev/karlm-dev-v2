@@ -11,7 +11,7 @@ new class extends Component {
     }
 }; ?>
 
-<div class="px-8">
+<div class="px-2">
     <flux:heading size="xl">
         Podcasts
     </flux:heading>

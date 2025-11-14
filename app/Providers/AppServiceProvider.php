@@ -39,11 +39,11 @@ class AppServiceProvider extends ServiceProvider
             //     'icon' => 'folder',
             //     'title' => 'Projects',
             // ],
-            // [
-            //     'url' => '/timeline',
-            //     'icon' => 'calendar-days',
-            //     'title' => 'Timeline',
-            // ],
+            [
+                'url' => '/timeline',
+                'icon' => 'calendar-days',
+                'title' => 'Timeline',
+            ],
             // [
             //     'url' => '/blog',
             //     'icon' => 'newspaper',
