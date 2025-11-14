@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Responsibilities\Schemas;
 
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextArea;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -24,7 +24,7 @@ class ResponsibilityForm
                     TextInput::make('title')
                         ->required(),
                 ]),
-            TextArea::make('description')
+            Textarea::make('description')
                 ->columnSpanFull()
                 ->required(),
             TextInput::make('sort_order')
