@@ -6,7 +6,7 @@ use Livewire\Volt\Volt;
 
 Volt::route('/', 'home')->name('home');
 Volt::route('/resume', 'resume')->name('resume');
-// Volt::route('/podcast', 'podcast')->name('podcast');
+Volt::route('/podcast', 'podcast')->name('podcast');
 Volt::route('/uses', 'uses')->name('uses');
 // Volt::route('/projects', 'projects')->name('projects');
 // Volt::route('/timeline', 'timeline')->name('timeline');

@@ -24,11 +24,11 @@ class AppServiceProvider extends ServiceProvider
                 'icon' => 'book-open',
                 'title' => 'Resume',
             ],
-            // [
-            //     'url' => '/podcast',
-            //     'icon' => 'microphone',
-            //     'title' => 'Podcast',
-            // ],
+            [
+                'url' => '/podcast',
+                'icon' => 'microphone',
+                'title' => 'Podcast',
+            ],
             [
                 'url' => '/uses',
                 'icon' => 'computer-desktop',
