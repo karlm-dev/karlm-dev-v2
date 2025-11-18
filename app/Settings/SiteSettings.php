@@ -36,6 +36,10 @@ class SiteSettings extends Settings
 
     public array $links = [];
 
+    public ?string $blurb = null;
+
+    public ?string $cta_text = null;
+
     public static function group(): string
     {
         return 'general';

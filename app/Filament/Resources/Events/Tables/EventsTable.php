@@ -19,9 +19,6 @@ class EventsTable
                     ->dateTime('M d, Y'),
                 TextColumn::make('title'),
             ])
-            ->filters([
-                //
-            ])
             ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),

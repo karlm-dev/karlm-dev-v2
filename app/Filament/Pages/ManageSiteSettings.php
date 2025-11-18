@@ -38,6 +38,12 @@ class ManageSiteSettings extends SettingsPage
                         ->required(),
                     Textarea::make('site_description')
                         ->required(),
+                    Textarea::make('blurb')
+                        ->columnSpanFull(),
+                    Textarea::make('cta_text')
+                        ->label('Call to Action Text')
+                        ->columnSpanFull()
+                        ->maxLength(255),
                     Textarea::make('copyright_notice'),
                     Textarea::make('footer_text'),
                     Toggle::make('allow_resume_download')
