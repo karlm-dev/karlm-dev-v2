@@ -2,7 +2,7 @@
     use App\Settings\SiteSettings;
 @endphp
 
-<div class="flex flex-wrap px-8 mx-auto space-y-6 align-center">
+<div class="px-8 py-16 mx-auto space-y-6 align-center">
     <flux:heading size="xl">
         About Me
     </flux:heading>
